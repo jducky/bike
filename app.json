@@ -20,6 +20,7 @@
         "FOREGROUND_SERVICE"
       ]
     },
+    "platforms": ["ios", "android"],
     "plugins": [
       [
         "expo-location",
