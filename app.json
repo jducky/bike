@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Bike Riding App",
+    "slug": "bike-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bikeapp.mobile"
+    },
+    "android": {
+      "package": "com.bikeapp.mobile",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "FOREGROUND_SERVICE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "This app uses location to track your bike rides."
+        }
+      ]
+    ]
+  }
+}
