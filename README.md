@@ -1,9 +1,10 @@
 # 🚴‍♂️ Bike Riding App
 
-[![React Native](https://img.shields.io/badge/React%20Native-0.72.10-blue.svg)](https://reactnative.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.1.3-blue.svg)](https://www.typescriptlang.org/)
-[![Expo](https://img.shields.io/badge/Expo-49.0.0-black.svg)](https://expo.dev/)
+[![React Native](https://img.shields.io/badge/React%20Native-0.79.5-blue.svg)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue.svg)](https://www.typescriptlang.org/)
+[![Expo](https://img.shields.io/badge/Expo-53.0.0-black.svg)](https://expo.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-jducky%2Fbike-green.svg)](https://github.com/jducky/bike)
 
 자전거 라이딩을 추적하고 관리할 수 있는 크로스 플랫폼 모바일 애플리케이션입니다.
 
@@ -24,18 +25,19 @@
 ## 🛠️ 기술 스택
 
 ### Frontend
-- **React Native** 0.72.10 - 크로스 플랫폼 모바일 앱 개발
-- **TypeScript** 5.1.3 - 타입 안전성
-- **Expo** 49.0.0 - 개발 및 빌드 플랫폼
+- **React Native** 0.79.5 - 크로스 플랫폼 모바일 앱 개발
+- **TypeScript** 5.6.3 - 타입 안전성
+- **Expo** 53.0.0 - 개발 및 빌드 플랫폼
 
 ### 주요 라이브러리
 - **React Navigation** 6.x - 앱 내 네비게이션
-- **React Native Maps** 1.7.1 - 지도 및 위치 서비스
-- **Expo Location** 16.1.0 - GPS 위치 추적
+- **React Native Maps** 1.20.1 - 지도 및 위치 서비스
+- **Expo Location** 18.1.6 - GPS 위치 추적
 - **Zustand** 4.4.0 - 상태 관리
-- **React Query** 4.32.0 - 데이터 캐싱 및 동기화
+- **React Query** 4.40.1 - 데이터 캐싱 및 동기화
 - **React Native Vector Icons** 10.0.0 - 아이콘
-- **AsyncStorage** 1.18.2 - 로컬 데이터 저장
+- **AsyncStorage** 2.1.2 - 로컬 데이터 저장
+- **React Native Web** 0.20.0 - 웹 플랫폼 지원
 
 ### 개발 도구
 - **ESLint** + **Prettier** - 코드 품질 관리
@@ -79,19 +81,22 @@ bike-app/
 
 1. **저장소 클론**
    ```bash
-   git clone [repository-url]
-   cd bike-app
+   git clone https://github.com/jducky/bike.git
+   cd bike/bike-app
    ```
 
 2. **의존성 설치**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 3. **앱 실행**
    ```bash
-   # 개발 서버 시작
-   npm start
+   # Expo 개발 서버 시작 (추천)
+   npx expo start
+
+   # 또는 React Native Metro 직접 실행
+   npx react-native start
 
    # iOS에서 실행
    npm run ios
@@ -99,7 +104,7 @@ bike-app/
    # Android에서 실행
    npm run android
 
-   # 웹에서 실행
+   # 웹에서 실행 (실험적)
    npm run web
    ```
 
@@ -184,6 +189,9 @@ npm test HomeScreen.test.tsx
 ### Phase 1 - 핵심 기능 완성 (진행 중)
 - [x] 기본 UI 구조 및 네비게이션
 - [x] 지도 표시 및 위치 권한
+- [x] Expo SDK 53 업그레이드 완료
+- [x] Metro 번들러 설정 및 실행
+- [x] GitHub 저장소 설정
 - [ ] 실시간 GPS 추적 로직
 - [ ] 라이딩 데이터 저장/조회
 - [ ] 실시간 통계 계산
@@ -219,9 +227,43 @@ npm test HomeScreen.test.tsx
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
+## 🚀 최근 업데이트
+
+### v1.0.0 (2025-07-13)
+- ✅ Expo SDK 53으로 업그레이드 완료
+- ✅ React Native 0.79.5 적용
+- ✅ Metro 번들러 호환성 문제 해결
+- ✅ GitHub 저장소 설정 및 초기 커밋
+- ✅ 상세한 프로젝트 문서화
+- ✅ 웹 플랫폼 지원 추가 (실험적)
+
+## 🛠️ 문제 해결
+
+### 자주 발생하는 문제들
+
+**Metro 번들러 시작 실패**
+```bash
+# 캐시 삭제 후 재시작
+rm -rf .expo node_modules/.cache
+npm install --legacy-peer-deps
+npx expo start --clear
+```
+
+**의존성 충돌 오류**
+```bash
+# legacy peer deps로 설치
+npm install --legacy-peer-deps
+```
+
+**Expo Go 버전 호환성**
+- Expo Go SDK 53 버전 사용 필수
+- 이전 버전은 호환되지 않음
+
 ## 📞 문의
 
-프로젝트에 대한 문의사항이나 버그 리포트는 이슈를 통해 남겨주세요.
+- **GitHub Issues**: [이슈 리포트](https://github.com/jducky/bike/issues)
+- **Repository**: https://github.com/jducky/bike
+- 프로젝트에 대한 문의사항이나 버그 리포트는 이슈를 통해 남겨주세요.
 
 ---
 
